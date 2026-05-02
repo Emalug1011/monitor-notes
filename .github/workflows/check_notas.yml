@@ -8,7 +8,10 @@ on:
 jobs:
   check:
     runs-on: ubuntu-latest
-    environment: NotiSecrets   # <-- aquí se accede a los secretos del environment
+    environment: NotiSecrets
+
+    permissions:
+      contents: write          # necesario para hacer commit de state.json
 
     steps:
       - name: Checkout
@@ -22,23 +25,16 @@ jobs:
       - name: Instalar dependencias
         run: pip install requests pdfplumber
 
-      - name: Restaurar estado anterior
-        uses: actions/cache@v4
-        with:
-          path: state.json
-          key: state-${{ github.run_id }}
-          restore-keys: |
-            state-
-
       - name: Ejecutar monitor
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python check_notas.py
 
-      - name: Guardar estado actualizado
-        uses: actions/cache/save@v4
-        if: always()
-        with:
-          path: state.json
-          key: state-${{ github.run_id }}
+      - name: Guardar state.json en el repo
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add state.json
+          git diff --cached --quiet || git commit -m "chore: update state.json [skip ci]"
+          git push
