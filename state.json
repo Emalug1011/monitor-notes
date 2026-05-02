@@ -1,0 +1,47 @@
+{
+  "88cbe9cc": {
+    "nombre": "\t205 INTRODUCCION AL DERECHO I (N)",
+    "url": "https://usacderecho.com/adminasigna/cartelera_pdf/2026_1_205_D.pdf",
+    "hash": "beeca2cf091564285bcaeb172ccc9c2d",
+    "has_data": false,
+    "col_found": true,
+    "last_checked": "2026-05-02 15:18:10",
+    "last_changed": "2026-05-02 15:18:10"
+  },
+  "a65f0c46": {
+    "nombre": "204 COMUNICACION",
+    "url": "https://usacderecho.com/adminasigna/cartelera_pdf/2026_1_204_D.pdf",
+    "hash": "beeca2cf091564285bcaeb172ccc9c2d",
+    "has_data": false,
+    "col_found": true,
+    "last_checked": "2026-05-02 15:18:12",
+    "last_changed": "2026-05-02 15:18:12"
+  },
+  "29c57ed1": {
+    "nombre": "203 CIENCIA POLITICA",
+    "url": "https://usacderecho.com/adminasigna/cartelera_pdf/2026_1_203_D.pdf",
+    "hash": "7aa2d15685a8483c1670251697f0b3b9",
+    "has_data": true,
+    "col_found": true,
+    "last_checked": "2026-05-02 15:18:14",
+    "last_changed": "2026-05-02 15:12:06"
+  },
+  "319a2818": {
+    "nombre": "202 ECONOMIA",
+    "url": "https://usacderecho.com/adminasigna/cartelera_pdf/2026_1_202_D.pdf",
+    "hash": "beeca2cf091564285bcaeb172ccc9c2d",
+    "has_data": false,
+    "col_found": true,
+    "last_checked": "2026-05-02 15:18:15",
+    "last_changed": "2026-05-02 15:18:15"
+  },
+  "ac390293": {
+    "nombre": "TEORIA DE LA INVESTIGACION",
+    "url": "https://usacderecho.com/adminasigna/cartelera_pdf/2026_1_201_D.pdf",
+    "hash": "beeca2cf091564285bcaeb172ccc9c2d",
+    "has_data": false,
+    "col_found": true,
+    "last_checked": "2026-05-02 15:18:17",
+    "last_changed": "2026-05-02 15:18:17"
+  }
+}

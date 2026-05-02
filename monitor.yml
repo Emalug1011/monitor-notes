@@ -1,0 +1,63 @@
+name: Monitor de Notas USAC
+
+on:
+  # Revisa automáticamente cada 30 minutos
+  schedule:
+    - cron: "*/10 * * * *"
+
+  # También permite ejecutarlo manualmente desde la UI de GitHub
+  workflow_dispatch:
+    inputs:
+      force_notify:
+        description: "Forzar notificación aunque no haya cambios"
+        required: false
+        default: "false"
+        type: boolean
+
+jobs:
+  check-notas:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Necesario para guardar state.json en el repo
+
+    steps:
+      # 1. Checkout del repositorio (incluye state.json si ya existe)
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      # 2. Python
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # 3. Dependencias con caché para acelerar ejecuciones futuras
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: ${{ runner.os }}-pip-
+
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
+
+      # 4. Ejecutar el monitor
+      - name: Revisar notas
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID:   ${{ secrets.TELEGRAM_CHAT_ID }}
+          FORCE_NOTIFY:       ${{ inputs.force_notify || 'false' }}
+        run: python check_notas.py
+
+      # 5. Guardar el estado actualizado (state.json) en el repo
+      #    Solo hace commit si hubo cambios reales
+      - name: Guardar estado
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add state.json
+          git diff --staged --quiet || git commit -m "chore: update state [skip ci]"
+          git push
