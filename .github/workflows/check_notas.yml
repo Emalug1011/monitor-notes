@@ -2,7 +2,7 @@ name: Monitor de Notas USAC
 
 on:
   schedule:
-    - cron: "*/30 * * * *"   # cada 30 minutos
+    - cron: "*/10 * * * *"   # cada 30 minutos
   workflow_dispatch:           # ejecución manual desde GitHub
 
 jobs:
