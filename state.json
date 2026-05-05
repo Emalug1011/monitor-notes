@@ -5,7 +5,7 @@
     "hash": "beeca2cf091564285bcaeb172ccc9c2d",
     "has_data": false,
     "col_found": true,
-    "last_checked": "2026-05-05 17:55:38",
+    "last_checked": "2026-05-05 19:43:47",
     "last_changed": "2026-05-02 23:25:47"
   },
   "a65f0c46": {
@@ -14,17 +14,17 @@
     "hash": "beeca2cf091564285bcaeb172ccc9c2d",
     "has_data": false,
     "col_found": true,
-    "last_checked": "2026-05-05 17:55:38",
+    "last_checked": "2026-05-05 19:43:48",
     "last_changed": "2026-05-02 23:25:47"
   },
   "29c57ed1": {
     "nombre": "203 CIENCIA POLITICA",
     "url": "https://usacderecho.com/adminasigna/cartelera_pdf/2026_1_203_D.pdf",
-    "hash": "7aa2d15685a8483c1670251697f0b3b9",
+    "hash": "64f500d6334bcc0d8410779fd7da3227",
     "has_data": true,
     "col_found": true,
-    "last_checked": "2026-05-05 17:55:39",
-    "last_changed": "2026-05-02 23:25:47"
+    "last_checked": "2026-05-05 19:43:48",
+    "last_changed": "2026-05-05 19:43:48"
   },
   "319a2818": {
     "nombre": "202 ECONOMIA",
@@ -32,7 +32,7 @@
     "hash": "beeca2cf091564285bcaeb172ccc9c2d",
     "has_data": false,
     "col_found": true,
-    "last_checked": "2026-05-05 17:55:39",
+    "last_checked": "2026-05-05 19:43:49",
     "last_changed": "2026-05-02 23:25:48"
   },
   "ac390293": {
@@ -41,7 +41,7 @@
     "hash": "ddf83e10f856eb368282ba54298e7d62",
     "has_data": true,
     "col_found": true,
-    "last_checked": "2026-05-05 17:55:40",
+    "last_checked": "2026-05-05 19:43:50",
     "last_changed": "2026-05-04 17:12:41"
   }
 }
